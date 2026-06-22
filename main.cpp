@@ -12,12 +12,12 @@ int main() {
 
         Alumno a1;
 
-        shared_ptr<Evaluacion> actividad1 = make_shared<Actividad>("Actividad 1", 0.3, 10, true);
-        shared_ptr<Evaluacion> actividad2 = make_shared<Actividad>("Actividad 2", 0.6, 10, false);
-        shared_ptr<Evaluacion> actividad3 = make_shared<Actividad>("Actividad 3", 0.5, 10, true);
-        shared_ptr<Evaluacion> test1 = make_shared<Test>("Test 1", 0.2, 10, "20/05/2026");
-        shared_ptr<Evaluacion> test2 = make_shared<Test>("Test 2", 0.2, 10, "21/05/2026");
-        shared_ptr<Evaluacion> test3 = make_shared<Test>("Test 3", 0.6, 10, "22/05/2026");
+        shared_ptr<Evaluacion> actividad1 = make_shared<Actividad>("Actividad 1", 0.2, 10, true);
+        shared_ptr<Evaluacion> actividad2 = make_shared<Actividad>("Actividad 2", 0.2, 10, false);
+        shared_ptr<Evaluacion> actividad3 = make_shared<Actividad>("Actividad 3", 0.2, 10, true);
+        shared_ptr<Evaluacion> test1 = make_shared<Test>("Test 1", 0.1, 10, "20/05/2026");
+        shared_ptr<Evaluacion> test2 = make_shared<Test>("Test 2", 0.1, 10, "21/05/2026");
+        shared_ptr<Evaluacion> test3 = make_shared<Test>("Test 3", 0.2, 10, "22/05/2026");
 
         evaluacion.push_back(actividad1);
         evaluacion.push_back(actividad2);
@@ -39,7 +39,7 @@ int main() {
 
         cout << "---- Alumno ----" << endl;
         cout << a1 << endl;
-        cout << "Calificacion Final: " << a1.calcularNotaFinal();
+        cout << "Calificacion Final: " << a1.calcularNotaFinal() << endl;
 
     } catch (const exception& e) {
         cout << e.what() << endl;

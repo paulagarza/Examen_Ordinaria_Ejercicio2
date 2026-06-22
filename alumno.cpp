@@ -28,7 +28,7 @@ double Alumno::calcularNotaFinal() {
         sumaPesos += e->getPeso();
         calificacionFinal += e->calcularCalificacion();
     }
-    if ((sumaPesos - 1.0) > 0.0001) {
+    if (abs(sumaPesos - 1.0) > 0.0001) {
         throw invalid_argument("Error: La suma de los pesos de las diferentes evaluaciones distinto al valor 1");
     }
     return calificacionFinal;
