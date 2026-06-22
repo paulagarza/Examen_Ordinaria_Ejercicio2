@@ -5,7 +5,7 @@
 #include "evaluacion.h"
 
 
-class Test : Evaluacion {
+class Test : public Evaluacion {
 private:
     // Atributos
     string fechaRealizacion;

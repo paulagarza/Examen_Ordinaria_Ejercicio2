@@ -28,11 +28,9 @@ double Alumno::calcularNotaFinal() {
         sumaPesos += e->getPeso();
         calificacionFinal += e->calcularCalificacion();
     }
-    /*
     if (sumaPesos != 1) {
         throw invalid_argument("Error: La suma de los pesos de las diferentes evaluaciones distinto al valor 1");
     }
-    */
     return calificacionFinal;
 }
 
