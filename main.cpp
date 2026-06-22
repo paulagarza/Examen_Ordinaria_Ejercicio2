@@ -8,14 +8,24 @@ using namespace std;
 
 int main() {
     try {
+        vector<shared_ptr<Evaluacion>> evaluacion;
+
         Alumno a1;
 
-        shared_ptr<Evaluacion> actividad1 = make_shared<Actividad>("Actividad 1", 1, 10, true);
+        shared_ptr<Evaluacion> actividad1 = make_shared<Actividad>("Actividad 1", 0.3, 10, true);
         shared_ptr<Evaluacion> actividad2 = make_shared<Actividad>("Actividad 2", 0.6, 10, false);
         shared_ptr<Evaluacion> actividad3 = make_shared<Actividad>("Actividad 3", 0.5, 10, true);
-        shared_ptr<Evaluacion> test1 = make_shared<Test>("Test 1", 1, 10, "20/05/2026");
+        shared_ptr<Evaluacion> test1 = make_shared<Test>("Test 1", 0.2, 10, "20/05/2026");
         shared_ptr<Evaluacion> test2 = make_shared<Test>("Test 2", 0.2, 10, "21/05/2026");
         shared_ptr<Evaluacion> test3 = make_shared<Test>("Test 3", 0.6, 10, "22/05/2026");
+
+        evaluacion.push_back(actividad1);
+        evaluacion.push_back(actividad2);
+        evaluacion.push_back(actividad3);
+        evaluacion.push_back(test1);
+        evaluacion.push_back(test2);
+        evaluacion.push_back(test3);
+        a1.setNotas(evaluacion);
 
         cout << "---- Calificaciones de las Actividades ----" << endl;
         cout << "Calificacion Actividad 1: " << actividad1->calcularCalificacion() << endl;

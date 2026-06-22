@@ -23,12 +23,12 @@ void Alumno::setNotas(const vector<shared_ptr<Evaluacion>>& notas) {
 // Método calcular nota final
 double Alumno::calcularNotaFinal() {
     double calificacionFinal = 0;
-    int sumaPesos = 0;
+    double sumaPesos = 0;
     for (const auto& e : notas) {
         sumaPesos += e->getPeso();
         calificacionFinal += e->calcularCalificacion();
     }
-    if (sumaPesos != 1) {
+    if ((sumaPesos - 1.0) > 0.0001) {
         throw invalid_argument("Error: La suma de los pesos de las diferentes evaluaciones distinto al valor 1");
     }
     return calificacionFinal;
